@@ -7,6 +7,7 @@
     "postinstall": "bower install"
   },
   "dependencies": {
+    "bower": "1.4.1",
     "body-parser": "~1.0.0",
     "debug": "~0.7.4",
     "express": "~4.0.0",
