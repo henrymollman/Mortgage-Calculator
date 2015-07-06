@@ -2,7 +2,7 @@
 var TableView = Backbone.View.extend({
 
   id: 'zillow',
-  className: 'col-md-7',
+  className: 'col-md-6',
 
   template: _.template('<h1 class="payment">Mortgage Details</h1>\
                         <h2>Affordability Amount</h2><p><%= affordabilityAmount %></p>\
@@ -23,7 +23,6 @@ var TableView = Backbone.View.extend({
   initialize: function() {
 
     this.collection.on('reset', function () {
-      console.log('called reset!')
       this.schedule = new ScheduleView({
         collection: this.collection
       });
@@ -38,7 +37,16 @@ var TableView = Backbone.View.extend({
   render: function() {
   this.$el.empty();
   console.log('rendering schedule view')
-  this.$el.append(this.template(this.collection.models[0].attributes));
+  var obj = this.collection.models[0].attributes;
+  var removeDash = new RegExp('^-');
+  for (var key in obj) {
+    console.log(obj[key][0])
+    if (obj[key][0] === "-") {
+      obj[key] = obj[key].replace(removeDash, '$');
+      console.log()
+    }
+  }
+  this.$el.append(this.template(obj));
   this.schedule.$el.appendTo($('#app'));
   }
 

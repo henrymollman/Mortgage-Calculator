@@ -31,7 +31,6 @@ var FormView = Backbone.View.extend({
     initialize: function() {
 
     this.collection.on('reset', function () {
-      console.log('called reset!')
         this.render();
     }, this);
   },

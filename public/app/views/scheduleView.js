@@ -1,9 +1,7 @@
 
 var ScheduleView = Backbone.View.extend({
 
-  el: '<table id="table" class="col-md-4"><caption>Payment Schedule</caption><tr><th>Period</th><th>Beginning Balance</th><th>Amount</th><th>Principal</th><th>Interest</th><th>Ending Balance</th></tr></table>',
-
-  className: 'col-md-5',
+  el: '<table class="table table-bordered"><caption>Payment Schedule</caption><tr><th>Period</th><th>Beginning Balance</th><th>Amount</th><th>Principal</th><th>Interest</th><th>Ending Balance</th></tr></table>',
 
   template: _.template('<tr><td><%= period %></td>\
                         <td><%= beginningBalance %></td>\
@@ -18,8 +16,9 @@ var ScheduleView = Backbone.View.extend({
 
   render: function() {
     var self = this;
-    console.log(this.collection);
-    var rows = this.collection.models[0].attributes.annualAmortizationSchedule.map(function(schedule) {
+    var sched = this.collection.models[0].attributes.annualAmortizationSchedule;
+    var rows = sched.map(function(schedule) {
+
       return self.template(schedule);
     });
     this.$el.append(rows);
