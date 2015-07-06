@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
 
 app.set('port', process.env.PORT || 3000);
