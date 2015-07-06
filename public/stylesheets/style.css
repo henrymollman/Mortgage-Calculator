@@ -1,0 +1,47 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#table {
+  float: right;
+  display: inline-table;
+  text-align: center;
+  margin: 30px;
+  right: 5%;
+}
+
+#zillow {
+  font-size: 20px;
+  text-align: center;
+  margin: 30px;
+}
+
+h1 {
+  font-size: 300%;
+  color: blue;
+}
+
+h2 {
+  text-decoration: underline;
+}
+
+caption {
+  color: red;
+  font-size: 40px;
+  text-align: center;
+}
+
+th {
+  font-size: 125%;
+}
+
+td {
+  font-size: 125%;
+  padding: 10px;
+  border: 5px solid;
+}
