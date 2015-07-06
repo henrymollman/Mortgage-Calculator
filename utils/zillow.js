@@ -4,7 +4,8 @@ var zillow = {};
 
 zillow.getMortgageInfo = function(req, res) {
   var input = req.query;
-  var url = 'http://www.zillow.com/webservice/mortgage/CalculateAffordability.htm?' + apiKey;
+  var apiKey = process.env.zillow;
+  var url = 'http://www.zillow.com/webservice/mortgage/CalculateAffordability.htm?' + apiKey 
     + '&annualincome=' + input['income']
     + '&monthlypayment=' + input['payment']
     + '&down=' + input['down']
